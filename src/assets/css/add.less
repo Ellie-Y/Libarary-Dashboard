@@ -1,0 +1,95 @@
+.wrapper-add {
+  width: 100%;
+  height: 100%;
+  .shelter {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    // 下面的表单要比遮罩层级高才能显示
+    z-index: 1;
+    .form {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .inner-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vh;
+        height: 60vh;
+        border-radius: 10%;
+        background-color: #ffffff;
+        div {
+          margin: 20px 0;
+          p{
+            color: #584e65;
+            font-size: 20px;
+          }
+          label {
+            width: 90px;
+            display: inline-block;
+            text-align: left;
+            font-size: 18px;
+            color: #4c4357;
+          }
+          input {
+            width: 180px;
+            height: 28px;
+            border-radius: 10px;
+            border: 1px solid #9698ad;
+            padding-left: 10px;
+            font-size: 18px;
+            color: #585858;
+          }
+        }
+        .type {
+          display: flex;
+          margin: 0;
+          align-items: center;
+          justify-content: center;
+          label {
+            width: 90px;
+          }
+          .choice {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            label {
+              width: 70px;
+              font-size: 16px;
+            }
+            input {
+              width: auto;
+              margin: 0 5px;
+            }
+          }
+        }
+        .buttons {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          button {
+            margin-top: 10px;
+            width: 80px;
+            height: 30px;
+            font-size: 15px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+          }
+          .submit {
+            background-color: rgba(191, 123, 170, 0.49);
+          }
+        }
+      }
+    }
+  }  
+}
