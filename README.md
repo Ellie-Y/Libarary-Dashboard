@@ -9,7 +9,7 @@
 2. Running the library serve. 
 
    ```
-node server.js
+   node server.js
    ```
    
 3. Install all requirements for the application under **`library-app`** folder
