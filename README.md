@@ -6,7 +6,7 @@
    npm install
    ```
 
-2. Running the library serve. 
+2. Running the library serve
 
    ```
    node server.js
