@@ -1,4 +1,4 @@
-###How to run the application
+### How to run the application
 
 1. Download and install all requirements for the server 
 
