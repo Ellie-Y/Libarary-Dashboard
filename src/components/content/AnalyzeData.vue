@@ -16,25 +16,17 @@
   import { mapState } from 'vuex'
 
   export default {
-    data() {
-      return {
-        totalUser: '',
-        totalBook: '',
-        loanedBook: 0
-      }
-    },
     computed: {
-      ...mapState(['loanData', 'allBookData', 'allUserData'])
-    },
-    created() {
-      // Get total count here
-      this.$api.get('/users/findByPage/1', null, data => {
-        this.totalUser = data.data.total;
-      });
-      this.$api.get('/books/findByPage/1?allEntities=true', null, data => {
-        this.totalBook = data.data.total;
-        this.loanedBook = this.loanData.length;
-      });
+      ...mapState(['loanData', 'allBookData', 'allUserData']),
+      totalUser() {
+        return this.allUserData.length;
+      },
+      totalBook() {
+        return this.allBookData.length;
+      },
+      loanedBook() {
+        return this.loanData.length;
+      }
     },
     mounted() {
       this.drawLine()
@@ -64,7 +56,7 @@
             fontSize: '14'
           },
           title: {
-            text: 'The total amount of User and Book'
+            text: 'The total amount of users and books'
           },
           grid: {
             left: '3%',

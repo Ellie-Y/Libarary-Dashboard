@@ -2,13 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-<<<<<<< HEAD
-import api from './api'
-
-Vue.config.productionTip = false
-// api成为了 vue上的原型，直接 $api就能调用接口了
-Vue.prototype.$api = api;
-=======
 // Find the index.js file by default
 import api from './api'
 import alert from './tools/alert/index.js'
@@ -34,7 +27,6 @@ Vue.use(Icon)
 Vue.use(Dropdown)
 Vue.use(DropdownItem)
 Vue.use(DropdownMenu)
->>>>>>> final
 
 new Vue({
   router,

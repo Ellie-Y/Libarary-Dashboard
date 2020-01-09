@@ -40,7 +40,7 @@
       }
     },
     computed: {
-      ...mapState(['loanBook', 'succeedAlert', 'userData', 'failedTypeAlert'])
+      ...mapState(['loanBook', 'succeedAlert', 'allUserData', 'failedTypeAlert'])
     },
     methods: {
       ...mapMutations(['showLoanForm']),
@@ -56,10 +56,10 @@
       submitLoan() {
         // Matching member barcode and id to create a loan
         if(!Number.isNaN(Number(this.userId)) && this.userId != '') {
-          this.userData.forEach(user => {
+          this.allUserData.forEach(user => {
             if(this.userId == user.barcode) {
               this.userId = user.id;
-              this.$api.post('/users/'+this.userId+'/loans/'+this.loanBook.id+'', this.due, data => {
+              this.$api.post('/users/'+this.userId+'/loans/'+this.loanBook.id+'', this.due, _ => {
                 this.showLoanForm(false);
               });
             }

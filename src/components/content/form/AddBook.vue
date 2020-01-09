@@ -52,7 +52,7 @@
           this.$api.post('/books', this.book, data => {
             this.showAddForm(false);
             this.$alert(this.$store.state.succeedAlert);
-            this.getBookList(1);
+            this.getBookList();
           })
         } else {
           this.$alert(this.$store.state.failedTypeAlert);

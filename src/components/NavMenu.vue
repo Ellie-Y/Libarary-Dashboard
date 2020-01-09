@@ -1,41 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="left-nav">
-    <!-- 头像部分 -->
-    <div class="profile">
-      <div class="profile-img">
-        <img src="../assets/profile-pic.png" alt="">
-      </div>
-      <div class="text-area">
-        <p>Welcome</p>
-        <!-- 名字动态导入 -->
-        <p class="name">Ellie Ye</p>
-      </div>
-    </div>
-    <!-- 中间菜单栏 -->
-    <div class="nav-menu">
-      <ul>
-        <li>
-          <img src="../assets/icons/user-solid.svg">
-          <router-link :to="{name: 'user'}" tag="p">Users</router-link>
-        </li>
-        <li>
-          <img src="../assets/icons/book-solid.svg">
-          <router-link :to="{name: 'books'}" tag="p">Books</router-link>
-        </li>
-        <li>
-          <img src="../assets/icons/chart-bar-solid.svg">
-          <router-link :to="{name: 'statistics'}" tag="p">Statistics</router-link>
-        </li>
-      </ul>
-    </div>
-    <!-- 退出系统 -->
-    <div class="log-out">
-      <img src="../assets/icons/sign-out-alt-solid.svg" alt="">
-      <p>Log out</p>
-    </div>
-  </div>
-=======
 
   <div class="menu-wrapper">
     <div class="left-nav">
@@ -89,20 +52,24 @@
     </div>
   </div>
 
->>>>>>> final
 </template>
 
 <script>
 
+  import { mapMutations } from 'vuex'
+
   export default {
-<<<<<<< HEAD
-    
-=======
     created() {
-      //initialize loan data and user data to display user and book 
+      //Initialize loan data and user data to display user and book 
       this.$store.dispatch('getLoanData');
       this.$store.dispatch('getUserList');
-      
+      // Get all data of books and users 
+      this.$api.get('/users', null, data => {
+        this.setAllUserData(data.data);
+      });
+      this.$api.get('/books', null, data => {
+        this.setAllBookData(data.data);
+      })
     },
     computed: {
       curRouter() {
@@ -110,6 +77,7 @@
       }
     },
     methods: {
+      ...mapMutations(['setAllUserData', 'setAllBookData']),
       routerChange(router) {
         if(this.$route.path != router) {
           this.$router.push({ path: router });
@@ -131,14 +99,10 @@
         }
       }
     }
->>>>>>> final
   }
 
 </script>
 
-<<<<<<< HEAD
-<style>
-=======
 <style scoped lang="less">
   .drop-down-menu {
     width: 146px;
@@ -158,8 +122,5 @@
       font-weight: bold;
     }
   }
-  
-  
->>>>>>> final
 
 </style>

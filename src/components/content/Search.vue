@@ -2,9 +2,6 @@
 
   <div class="search">
     <span class="search-icon"></span>
-<<<<<<< HEAD
-    <input type="text" placeholder="Search users via name or id">
-=======
     <!-- Search users -->
     <input type="text"
            :placeholder="placeholder"
@@ -18,17 +15,12 @@
            v-if="this.$route.path == '/book'"
            v-model="keyword"
            @keyup.enter="searchBook">
->>>>>>> final
   </div>
 
 </template>
 
 <script>
 
-<<<<<<< HEAD
-  export default {
-    
-=======
   import { mapMutations, mapActions } from 'vuex'
 
   export default {
@@ -106,7 +98,6 @@
         }
       }
     }
->>>>>>> final
   }
 
 </script>

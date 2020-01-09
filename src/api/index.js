@@ -1,33 +1,4 @@
 import axios from 'axios'
-<<<<<<< HEAD
-import urls from './URLs'
-
-const allDetails = {
-  allDetails: 'allEntities=true'
-}
-
-//配置 get请求
-//axios 不能作为变量名，因为是关键字
-const myAxios = axios.create({
-  baseURL: urls.baseURL,
-  method: 'get',
-  params: {
-    //参数可以选填，但是要解构
-    // ...allDetails
-  }
-});
-
-export default {
-  getUser() {
-    return myAxios({
-      //导入的 urls 下的 user项
-      url: urls.user,
-      
-    })
-  }
-}
-
-=======
 
 let newAxios = require('axios');
 const baseURL = 'http://127.0.0.1:3000';
@@ -63,4 +34,3 @@ export default {
     return apiAxios('DELETE', url, data, response)
   },
 }
->>>>>>> final

@@ -42,11 +42,6 @@
     },
     methods: {
       ...mapMutations(['setAllUserData'])
-    },
-    created() {
-      this.$api.get('/users', null, data => {
-        this.setAllUserData(data.data);
-      })
     }
   }
 

@@ -7,7 +7,7 @@
           <i class="el-icon-user"></i>
         </div>
       </template>
-      <template v-for="user in userData" v-if="book.loaned">
+      <template v-for="user in allUserData" v-if="book.loaned">
         <!-- By matching loan.bookId and book.id to determine whether this book has been borrowed -->
         <div class="loan" v-for="loan in loanData" v-if="loan.BookId == book.id ? true : false">
           <p v-if="loan.UserId == user.id" :key="loan.id">
@@ -48,7 +48,7 @@
       this.getBookList(1)
     },
     computed: {
-      ...mapState(['userData', 'loanData', 'bookData', 'succeedAlert', 'page'])
+      ...mapState(['allUserData', 'loanData', 'bookData', 'succeedAlert', 'page'])
     },
     methods: {
       ...mapMutations(['showUpdateForm', 'setBookData', 'setEditBook', 'showLoanForm', 'setLoanBook']),

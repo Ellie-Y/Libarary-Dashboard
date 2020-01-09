@@ -1,27 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-<<<<<<< HEAD
-=======
 import api from '../api'
->>>>>>> final
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-<<<<<<< HEAD
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
-  modules: {
-
-  }
-=======
     showForm: false,
     addForm: false,
     loanForm: false,
@@ -160,5 +144,4 @@ export default new Vuex.Store({
     }
   }
   
->>>>>>> final
 })
