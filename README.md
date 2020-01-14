@@ -27,7 +27,7 @@
 
 
 ### UI
-
-<img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/sample.gif" width = "600px" />
-
 <img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/screenshot.jpg" width = "600px" />
+
+### Video
+<img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/sample.gif" width = "600px" />
