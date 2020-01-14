@@ -31,5 +31,5 @@
 <img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/screenshot.jpg" width = "600px" />
 
 ### Gif 
-**(screen with less than 1280px)** <br>
+**(screen width less than 1280px)** <br>
 <img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/sample.gif" width = "600px" />
