@@ -27,7 +27,7 @@
 
 
 ### UI
-**(screen with greater than 1280px)** <br>
+**(screen width greater than 1280px)** <br>
 <img src = "https://github.com/Ellie-Y/Library-Dashboard/blob/master/screenshot.jpg" width = "600px" />
 
 ### Gif 
