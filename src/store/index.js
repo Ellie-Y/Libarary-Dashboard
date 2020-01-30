@@ -66,7 +66,7 @@ export default new Vuex.Store({
     },
     setCount(state, count) {
       state.page.totalCount = count;
-      // Rounds a number up. A page is able to have only one user or book 
+      // Rounds a number up. A page is able to have only eight users or books
       state.page.totalPage = Math.ceil(count / 8);
     },
     setCurPage(state, page) {
