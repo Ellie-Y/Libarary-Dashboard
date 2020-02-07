@@ -4,7 +4,7 @@ let newAxios = require('axios');
 const baseURL = 'http://127.0.0.1:3000';
 
 function apiAxios(method, url, data, response) {
-  //params是添加在url上的，data是要给后台的数据
+  //params is passed in url，data is passed through body
   newAxios({
     method: method,
     url: url,
