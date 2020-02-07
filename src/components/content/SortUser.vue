@@ -15,6 +15,7 @@
   export default {
     data() {
       return {
+        // radio 1 is all user, radio 2 is borrowing 
         radio: 1,
         loanList: [],
         staffList: []
@@ -26,12 +27,15 @@
     methods: {
       ...mapMutations(['setUserData', 'setCount']),
       ...mapActions(['getUserList']),
+      // when user click the sort options
+      // the corresponding number will be passed as a param
       buttonChange(val) {
         switch(val) {
           case '1': 
             this.getUserList(1);
             break;
           case '2': 
+            // filter users who are currently borrowing books
             let temUser = [];
             this.loanData.forEach(loan => {
               temUser.push(this.allUserData.find((user, index) => {
@@ -39,7 +43,8 @@
               }));
             });
             this.loanList = temUser;
-            //remove repeat users
+            //User may borrow more than one book causing duplications
+            //So needs to remove duplications
             let hash = {};
             this.loanList = this.loanList.reduce(function(item, next) {
               hash[next.name] ? '' : hash[next.name] = true && item.push(next);

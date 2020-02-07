@@ -30,6 +30,10 @@ export default new Vuex.Store({
       type: 'failed',
       msg: 'No Blank. Barcode or ISBN needs to be a Number'
     },
+    failUpdated: {
+      type: 'failed',
+      msg: 'Update Failed'
+    }
   },
   mutations: {
     // To show update form or not 
@@ -85,17 +89,14 @@ export default new Vuex.Store({
       // Using 'then' in updateUser component to get success alert
       return new Promise((res, rej) => {
         api.put('/users/' + state.editUser.id + '', newUser, data => {
-          if (data.status == 200) {
+          if (data.status === 200) {
             // Real-time update
             // Modify state data and server data together to reduce times of send requests by refresh page
             Object.assign(state.editUser, newUser);
             commit('showUpdateForm', false);
             res(state.succeedAlert);
           } else {
-            rej({
-              type: 'failed',
-              msg: 'Update Failed'
-            });
+            rej(state.failUpdated);
           }
         });
       });
@@ -103,16 +104,13 @@ export default new Vuex.Store({
     updateBookData({commit, state}, newBook) {
       return new Promise((res, rej) => {
         api.put('/books/'+newBook.id+'', newBook, data => {
-          if (data.status == 200) {
+          if (data.status === 200) {
             // Modify together for reducing times of send requests by refreshing page
             Object.assign(state.editBook, newBook);
             commit('showUpdateForm', false);
             res(state.succeedAlert);
           } else {
-            rej({
-              type: 'failed',
-              msg: 'Update Failed'
-            });
+            rej(state.failUpdated);
           }
         });
       });
