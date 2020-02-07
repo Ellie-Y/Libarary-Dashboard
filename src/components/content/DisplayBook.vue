@@ -45,7 +45,7 @@
   export default {
     created() {
       //initialize book data to display
-      this.getBookList(1)
+      this.getBookList(1);
     },
     computed: {
       ...mapState(['allUserData', 'loanData', 'bookData', 'succeedAlert', 'page'])
@@ -54,27 +54,27 @@
       ...mapMutations(['showUpdateForm', 'setBookData', 'setEditBook', 'showLoanForm', 'setLoanBook']),
       ...mapActions(['getBookList']),
       update(book) {
-        this.showUpdateForm(true)
-        this.setEditBook(book)
+        this.showUpdateForm(true);
+        this.setEditBook(book);
       },
       deleteBook(bookId) {
-        const flag = confirm('Are you sure to delete it?')
+        const flag = confirm('Are you sure to delete it?');
         if (flag) {
           this.$api.delete('/books/' + bookId + '', null, _ => {
             // If only one data left on current page, jump to previous page after deleted. 
             if (this.page.curPage > Math.ceil((this.page.totalCount - 1) / 8)) {
-              this.getBookList(this.page.curPage - 1)
+              this.getBookList(this.page.curPage - 1);
             } else {
-              this.getBookList()
+              this.getBookList();
             }
-            this.$alert(this.succeedAlert)
+            this.$alert(this.succeedAlert);
           })
         }
       },
       loanBook(book) {
         // pass the current book data to loanTo component
-        this.showLoanForm(true)
-        this.setLoanBook(book)
+        this.showLoanForm(true);
+        this.setLoanBook(book);
       }
     }
   }
@@ -83,6 +83,7 @@
 
 <style>
 
+  /* Give the style to icon  */
   .icon {
     position: absolute;
     right: 20px;

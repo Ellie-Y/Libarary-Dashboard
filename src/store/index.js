@@ -66,7 +66,7 @@ export default new Vuex.Store({
     },
     setCount(state, count) {
       state.page.totalCount = count;
-      // Rounds a number up. A page renders maxmium eight users or books
+      // Rounds a number up. A page renders maximum eight users or books
       state.page.totalPage = Math.ceil(count / 8);
     },
     setCurPage(state, page) {
@@ -81,7 +81,7 @@ export default new Vuex.Store({
   },
   actions: {
     updateUserData({commit, state}, newUser) {
-      // Return as promise 
+      // Return as a promise 
       // Using 'then' in updateUser component to get success alert
       return new Promise((res, rej) => {
         api.put('/users/' + state.editUser.id + '', newUser, data => {
@@ -104,7 +104,7 @@ export default new Vuex.Store({
       return new Promise((res, rej) => {
         api.put('/books/'+newBook.id+'', newBook, data => {
           if (data.status == 200) {
-            // Modify together for reducing times of send requests by refresh page
+            // Modify together for reducing times of send requests by refreshing page
             Object.assign(state.editBook, newBook);
             commit('showUpdateForm', false);
             res(state.succeedAlert);
@@ -118,7 +118,7 @@ export default new Vuex.Store({
       });
     },
     getUserList({commit, state}, page) {
-      // Page param passed to change page as param, 
+      // Page param passed to change page 
       if(page) {
         commit('setCurPage', page);
       } 
