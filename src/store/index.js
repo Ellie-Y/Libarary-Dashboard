@@ -66,11 +66,7 @@ export default new Vuex.Store({
     },
     setCount(state, count) {
       state.page.totalCount = count;
-<<<<<<< HEAD
       // Rounds a number up. A page renders maxmium eight users or books
-=======
-      // Rounds a number up. A page can contain maximum eight users or books
->>>>>>> update
       state.page.totalPage = Math.ceil(count / 8);
     },
     setCurPage(state, page) {

@@ -4,11 +4,7 @@ let newAxios = require('axios');
 const baseURL = 'http://127.0.0.1:3000';
 
 function apiAxios(method, url, data, response) {
-<<<<<<< HEAD
   //params is passed in url，data is passed through body
-=======
-  //params is passed in url，data passed through body
->>>>>>> update
   newAxios({
     method: method,
     url: url,
