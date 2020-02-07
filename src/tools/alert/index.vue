@@ -1,5 +1,5 @@
 <template>
-
+  <!-- alert plugin -->
   <div class="alert" v-if="over" :class="{'fade-in': showClass, 'fade-out': !showClass, success: type == 'success', fail: type=='fail'}">
     <p class="success" v-if="type == 'succeed'">{{msg}}</p>
     <p class="fail" v-if="type == 'failed'">{{msg}}</p>

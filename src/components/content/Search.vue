@@ -54,7 +54,7 @@
     methods: {
       ...mapMutations(['setUserData', 'setBookData', 'setCount']),
       ...mapActions(['getUserList', 'getBookList']),
-      //search when the rounter in user
+      //search when the rounter is user
       searchUser() {
         //Different search types determined by using number or string
         if (this.keyword != '' && !isNaN(this.keyword) == true) {
@@ -86,7 +86,7 @@
           });
           this.$api.get('/search', this.searchByAuthorName, data => {
             // Modified search server in order to find books here
-            // No return value means searching via title, then do nothing 
+            // No return value from API means searching via title, then do nothing 
             if (data.data.length == 0) {
               return;
             } else {

@@ -5,6 +5,7 @@ const Alert = Vue.extend(alert);
 
 export default function createAlert({duration=2500, msg, type}) {
     const app = new Alert({
+      //create a div in the outermost layer
         el: document.createElement("div"),
         data: {
             showClass: true,

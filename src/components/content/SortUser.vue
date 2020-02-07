@@ -43,8 +43,8 @@
               }));
             });
             this.loanList = temUser;
-            //User may borrow more than one book causing duplications
-            //So needs to remove duplications
+            //User may borrow more than one book, that will cause duplications
+            //So needs to remove duplicated users
             let hash = {};
             this.loanList = this.loanList.reduce(function(item, next) {
               hash[next.name] ? '' : hash[next.name] = true && item.push(next);
